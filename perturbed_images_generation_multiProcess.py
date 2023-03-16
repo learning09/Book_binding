@@ -672,45 +672,6 @@ class perturbed(object):
 			if relativeShift_position == 'relativeShift_v2':
 				self.synthesis_perturbed_label -= pixel_position
 
-			'''resize
-			if im_lr > im_ud and (self.perturbed_x_max-self.perturbed_x_min) > 0 and (self.perturbed_y_max-self.perturbed_y_min) > 0 and self.is_perform(0, 1):
-				synthesis_perturbed_img_clip_resize = self.synthesis_perturbed_img[self.perturbed_x_min:self.perturbed_x_max, self.perturbed_y_min:self.perturbed_y_max, :].copy()
-				synthesis_perturbed_img_clip_resize_shape_ = synthesis_perturbed_img_clip_resize.shape[:2]
-				perturbed_margin = np.random.choice([16, 20, 28, 32], p=[0.6, 0.2, 0.1, 0.1])
-				mesh_0_ = self.new_shape[0]-synthesis_perturbed_img_clip_resize_shape_[0]-perturbed_margin
-				# mesh_shape = [base_img_shrink, base_img_shrink]
-				if aspect_ratio > 1.3:
-					mesh_1_ = self.new_shape[1]-synthesis_perturbed_img_clip_resize_shape_[1]-perturbed_margin
-				else:
-					mesh_1_ = int(round(mesh_0_ // aspect_ratio))
-				synthesis_perturbed_img_clip_resize = cv2.resize(synthesis_perturbed_img_clip_resize, (synthesis_perturbed_img_clip_resize_shape_[1]+mesh_1_, synthesis_perturbed_img_clip_resize_shape_[0]+mesh_0_), interpolation=cv2.INTER_NEAREST)
-				if synthesis_perturbed_img_clip_resize.shape[:2] < self.synthesis_perturbed_img.shape[:2]:
-					synthesis_perturbed_img_clip_resize_shape = synthesis_perturbed_img_clip_resize.shape[:2]
-					if (self.new_shape[0] - synthesis_perturbed_img_clip_resize_shape[0])%2 == 0:
-						synthesis_perturbed_img_clip_resize_l = (self.new_shape[0] - synthesis_perturbed_img_clip_resize_shape[0])//2
-						synthesis_perturbed_img_clip_resize_r = synthesis_perturbed_img_clip_resize_l
-					else:
-						synthesis_perturbed_img_clip_resize_l = (self.new_shape[0] - synthesis_perturbed_img_clip_resize_shape[0]) // 2
-						synthesis_perturbed_img_clip_resize_r = synthesis_perturbed_img_clip_resize_l+1
-	
-					if (self.new_shape[1] - synthesis_perturbed_img_clip_resize_shape[1])%2 == 0:
-						synthesis_perturbed_img_clip_resize_u = (self.new_shape[1] - synthesis_perturbed_img_clip_resize_shape[1])//2
-						synthesis_perturbed_img_clip_resize_d = synthesis_perturbed_img_clip_resize_u
-					else:
-						synthesis_perturbed_img_clip_resize_u = (self.new_shape[1] - synthesis_perturbed_img_clip_resize_shape[1]) // 2
-						synthesis_perturbed_img_clip_resize_d = synthesis_perturbed_img_clip_resize_u+1
-	
-					if synthesis_perturbed_img_clip_resize_l > 0 and synthesis_perturbed_img_clip_resize_r > 0 and synthesis_perturbed_img_clip_resize_u > 0 and synthesis_perturbed_img_clip_resize_d > 0:
-						self.synthesis_perturbed_img = np.full_like(self.synthesis_perturbed_img, 257, dtype=np.int16)
-						self.synthesis_perturbed_img[synthesis_perturbed_img_clip_resize_l:self.new_shape[0]-synthesis_perturbed_img_clip_resize_r, synthesis_perturbed_img_clip_resize_u:self.new_shape[1]-synthesis_perturbed_img_clip_resize_d, :] = synthesis_perturbed_img_clip_resize
-	
-						synthesis_perturbed_label_clip_resize = self.synthesis_perturbed_label[self.perturbed_x_min:self.perturbed_x_max,
-														   self.perturbed_y_min:self.perturbed_y_max, :].copy()
-						self.synthesis_perturbed_label = np.zeros_like(self.synthesis_perturbed_label)
-						synthesis_perturbed_label_clip_resize = cv2.resize(synthesis_perturbed_label_clip_resize, (synthesis_perturbed_img_clip_resize_shape_[1]+mesh_1_, synthesis_perturbed_img_clip_resize_shape_[0]+mesh_0_), interpolation=cv2.INTER_NEAREST)
-						self.synthesis_perturbed_label[synthesis_perturbed_img_clip_resize_l:self.new_shape[0]-synthesis_perturbed_img_clip_resize_r, synthesis_perturbed_img_clip_resize_u:self.new_shape[1]-synthesis_perturbed_img_clip_resize_d, :] = synthesis_perturbed_label_clip_resize
-			'''
-			''''''
 			if np.sum(self.synthesis_perturbed_img[:, 0]) != 771 * self.new_shape[0] or np.sum(self.synthesis_perturbed_img[:, self.new_shape[1]-1]) != 771 * self.new_shape[0] or \
 					np.sum(self.synthesis_perturbed_img[0, :]) != 771 * self.new_shape[1] or np.sum(self.synthesis_perturbed_img[self.new_shape[0]-1, :]) != 771*self.new_shape[1]:
 				# raise Exception('clip error')
@@ -825,23 +786,23 @@ def xgw(args):
 	path = args.path
 	bg_path = args.bg_path
 	if args.output_path is None:
-		save_path = '/lustre/home/gwxie/data/unwarp_new/train/data1024_greyV2/'
+		save_path = '/train/data1024_greyV2/'
 	else:
 		save_path = args.output_path
 
 	# if not os.path.exists(save_path + 'clip/'):
 	# 	os.makedirs(save_path + 'clip/')
 	#
-	if not os.path.exists(save_path + 'grey/'):
-		os.makedirs(save_path + 'grey/')
+	# if not os.path.exists(save_path + 'grey/'):
+	#	os.makedirs(save_path + 'grey/')
 	if not os.path.exists(save_path + 'color/'):
 		os.makedirs(save_path + 'color/')
 
 	# if not os.path.exists(save_path + 'grey_im/'):
-	# 	os.makedirs(save_path + 'grey_im/')
-	#
-	# if not os.path.exists(save_path + 'png/'):
-	# 	os.makedirs(save_path + 'png/')
+	#	os.makedirs(save_path + 'grey_im/')
+	
+	if not os.path.exists(save_path + 'png/'):
+	 	os.makedirs(save_path + 'png/')
 
 	if not os.path.exists(save_path + 'scan/'):
 		os.makedirs(save_path + 'scan/')
