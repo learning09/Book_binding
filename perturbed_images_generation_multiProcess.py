@@ -756,6 +756,7 @@ class perturbed(object):
 		if not is_save_perturbed:
 			print('save error')
 		else:
+			print('no error',self.save_path,self.save_suffix,self.origin_img)
 			cv2.imwrite(self.save_path + 'scan/' + self.save_suffix + '_' + str(m) + '.png', self.origin_img)
 			train_t = time.time() - begin_train
 			mm, ss = divmod(train_t, 60)
