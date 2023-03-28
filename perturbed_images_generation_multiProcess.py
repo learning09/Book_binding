@@ -798,7 +798,7 @@ class perturbed(object):
 					pickle_perturbed_data = pickle.dumps(synthesis_perturbed_grey)
 					f.write(pickle_perturbed_data)
 				print(synthesis_perturbed_color[:,:,1])	
-				cv2.imwrite(self.save_path+'outputs/'+perfix_+'_'+fold_curve+'.png', synthesis_perturbed_color[:, :, :1])
+				cv2.imwrite(self.save_path+'outputs/'+perfix_+'_'+fold_curve+'.png', synthesis_perturbed_color[:, :, :3])
 
 
 		if not is_save_perturbed:
