@@ -103,7 +103,7 @@ def train(args):
     
     if args.schema == 'train':
         trainloader = FlatImg.loadTrainData(data_split='train', is_shuffle=True)
-        FlatImg.loadValidateAndTestData(is_shuffle=True, sub_dir=args.test_shrink_sub_dir)
+        FlatImg.loadValidateAndTestData(is_shuffle=True, sub_dir=test_shrink_sub_dir)
         trainloader_len = len(trainloader)
 
         for epoch in range(epoch_start, args.n_epoch):
