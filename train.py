@@ -244,7 +244,7 @@ class AverageMeter(object):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Hyperparams')
-    parser.add_argument('--arch', nargs='?', type=str, default='Dewarping-Document-Image-By-Displacement-Flow-Estimation',
+    parser.add_argument('--arch', nargs='?', type=str, default='Project_Report',
                         help='Architecture')
 
     parser.add_argument('--dataset', nargs='?', type=str, default='v5',
