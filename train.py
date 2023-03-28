@@ -14,6 +14,7 @@ from pathlib import Path
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]
 sys.path.append('ROOT')
+from torch.autograd import Variable
 
 from network import ResnetDilatedRgressAndClassifyV2v6v4c1GN
 import utils as utils
