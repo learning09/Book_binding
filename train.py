@@ -285,6 +285,11 @@ if __name__ == '__main__':
     parser.add_argument('--schema', type=str, default='test',
                         help='train or test')
 
+    parser.add_argument('--test_shrink_sub_dir', type=str, default='shrink_512/crop/',
+                        help='test_shrink_sub_dir')
+
+    
+    
     # parser.set_defaults(resume='./2019-06-25 11:52:54/49/2019-06-25 11:52:54flat_img_classifyAndRegress_grey-data1024_greyV2.pkl')
 
     parser.add_argument('--parallel', default='6', type=list,
