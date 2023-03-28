@@ -90,7 +90,7 @@ def train(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Hyperparams')
-    parser.add_argument('--arch', nargs='?', type=str, default='Dewarping-Document-Image-By-Displacement-Flow-Estimation',
+    parser.add_argument('--arch', nargs='?', type=str, default='Project_Report',
                         help='Architecture to use [\'fcn8s, unet, segnet etc\']')
 
     parser.add_argument('--dataset', nargs='?', type=str, default='v5',
@@ -99,7 +99,7 @@ if __name__ == '__main__':
     parser.add_argument('--l_rate', nargs='?', type=float, default=0.0002,
                         help='Learning Rate')
 
-    parser.add_argument('--resume', default=ROOT / '2019-06-25 11:52:54/49/2019-06-25 11:52:54flat_img_classifyAndRegress_grey-data1024_greyV2.pkl', type=str, 
+    parser.add_argument('--resume', default=None, 
                         help='Path to previous saved model to restart from') 
     
     parser.add_argument('--data_path_test', default=ROOT / 'dataset/shrink_1024_960/crop/', type=str,
