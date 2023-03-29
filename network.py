@@ -1,6 +1,6 @@
 import torch.nn as nn
 import torch
-from xgw.segmentation.xgw_models.xgw_model_utils import *
+#from xgw.segmentation.xgw_models.xgw_model_utils import *
 import torch.nn.init as tinit
 import torch.nn.functional as F
 
