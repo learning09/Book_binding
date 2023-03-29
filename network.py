@@ -184,8 +184,8 @@ class ResNetV2StraightV2GN(nn.Module):
 		if self.dropRate[3] > 0:
 			out4 = self.drop_out_4(out4)
 
-		if is_skip:
-			return out4, out1
+		#if is_skip:
+			#return out4, out1
 		return out4
 
 class DilatedResnetForFlatByClassifyWithRgressV2v6v4c1GN(nn.Module):
