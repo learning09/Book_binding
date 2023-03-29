@@ -1,6 +1,6 @@
 import torch.nn as nn
 import torch
-# from xgw.segmentation.xgw_models.xgw_model_utils import *
+from xgw.segmentation.xgw_models.xgw_model_utils import *
 import torch.nn.init as tinit
 import torch.nn.functional as F
 
@@ -161,28 +161,28 @@ class ResNetV2StraightV2GN(nn.Module):
 			layers.append(block(out_channels, out_channels, BatchNorm, GN_num, is_activation=True, is_top=False, is_dropout=self.is_sub_dropout))
 		return nn.Sequential(*layers)
 
-	#def forward(self, x):
-	def forward(self, x, is_skip=False):
+	def forward(self, x):
+	#def forward(self, x, is_skip=False):
 
-		#out1 = self.layer1(x)
+		out1 = self.layer1(x)
 
-		if self.dropRate[0] > 0:
-			out1 = self.drop_out(out1)
+		#if self.dropRate[0] > 0:
+		#	out1 = self.drop_out(out1)
 
-		#out2 = self.layer2(out1)
+		out2 = self.layer2(out1)
 
-		if self.dropRate[1] > 0:
-			out2 = self.drop_out_2(out2)
+		#if self.dropRate[1] > 0:
+		#	out2 = self.drop_out_2(out2)
 
-		#out3 = self.layer3(out2)
+		out3 = self.layer3(out2)
 
-		if self.dropRate[2] > 0:
-			out3 = self.drop_out_3(out3)
+		#if self.dropRate[2] > 0:
+		#	out3 = self.drop_out_3(out3)
 
-		#out4 = self.layer4(out3)
+		out4 = self.layer4(out3)
 
-		if self.dropRate[3] > 0:
-			out4 = self.drop_out_4(out4)
+		#if self.dropRate[3] > 0:
+		#	out4 = self.drop_out_4(out4)
 
 		#if is_skip:
 			#return out4, out1
