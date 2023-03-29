@@ -692,7 +692,7 @@ class FlatImg(object):
                             perturbed_img = images_val.data.cpu().numpy().transpose(0, 2, 3, 1)
 
                             # self.save_flat_mage.flatByRegressWithClassiy_triangular_v2_RGB_v2(pred_regress[0], pred_classify[0], im_name[0], epoch+1, groun_truth_path=self.data_path_test+'scan/scan/', scheme='test')
-                            self.save_flat_mage.flatByRegressWithClassiy_triangular_v2_RGB(pred_regress[0], pred_classify[0], im_name[0], epoch+1, scheme='test', perturbed_img=perturbed_img)    # 'scan/scan/'
+                            self.save_flat_mage.flatByRegressWithClassiy_triangular_v3_RGB(pred_regress[0], pred_classify[0], im_name[0], epoch+1, scheme='test', perturbed_img=perturbed_img)    # 'scan/scan/'
                         else:
                             continue
                     except:
