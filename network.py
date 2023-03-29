@@ -436,4 +436,4 @@ class ResnetDilatedRgressAndClassifyV2v6v4c1GN(nn.Module):
 		return self.dilated_unet(x, is_softmax)
 
 
-model = ResnetDilatedRgressAndClassifyV2v6v4c1GN(n_classes=n_classes, num_filter=32, BatchNorm='GN', in_channels=3)
+model = ResnetDilatedRgressAndClassifyV2v6v4c1GN(n_classes=2, num_filter=32, BatchNorm='GN', in_channels=3)
