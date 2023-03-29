@@ -74,8 +74,8 @@ class SaveFlatImage(object):
 
         process_pool = Pool(self.batch_size)
         for i_val_i in range(perturbed_label.shape[0]):
-            process_pool.apply_async(func=self.flatByRegressWithClassiy_triangular_v2_RGB, args=(perturbed_label[i_val_i], perturbed_label_classify[i_val_i], im_name[i_val_i], epoch, scheme, is_scaling, perturbed_img[i_val_i]))
-            # process_pool.apply_async(func=self.flatByRegressWithClassiy_triangular_v3_RGB, args=(perturbed_label[i_val_i], perturbed_label_classify[i_val_i], im_name[i_val_i], epoch, scheme, is_scaling, perturbed_img[i_val_i]))
+            #process_pool.apply_async(func=self.flatByRegressWithClassiy_triangular_v2_RGB, args=(perturbed_label[i_val_i], perturbed_label_classify[i_val_i], im_name[i_val_i], epoch, scheme, is_scaling, perturbed_img[i_val_i]))
+            process_pool.apply_async(func=self.flatByRegressWithClassiy_triangular_v3_RGB, args=(perturbed_label[i_val_i], perturbed_label_classify[i_val_i], im_name[i_val_i], epoch, scheme, is_scaling, perturbed_img[i_val_i]))
             
         process_pool.close()
         process_pool.join()
