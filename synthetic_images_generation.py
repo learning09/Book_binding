@@ -403,7 +403,7 @@ class perturbed(object):
 			if relativeShift_position in ['position', 'relativeShift_v2']:
 				perturbed_xy_ = self.perturbed_xy_ + np.array([omega_perturbed * perturbed_v[0], omega_perturbed * perturbed_v[1]]).transpose(1, 2, 0)
 				perturbed_xy_ = cv2.blur(perturbed_xy_, (17, 17))
-				perturbed_xy_round_int = np.around(perturbed_xy_).astype(np.int)
+				perturbed_xy_round_int = np.around(perturbed_xy_).astype(int)
 
 				# b = time.time()
 				it_r_i_0 = np.nditer(perturbed_xy_round_int[:, :, 0], flags=['multi_index'])
