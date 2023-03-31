@@ -1,11 +1,4 @@
-'''
-GuoWang xie
-set up :2018-4-1
-
--- data1024_greyV2
-'''
-
-
+# Import libraries
 import argparse
 import os
 import pickle
