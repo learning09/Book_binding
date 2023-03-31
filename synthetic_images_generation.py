@@ -770,9 +770,9 @@ class perturbed(object):
 				self.synthesis_perturbed_img[self.synthesis_perturbed_img < 0] = 0
 
 				if is_save_perspective:
-					print(str(perturbed_time)+'-'+str(repeat_time)+'  perspective')
+					print('Perturbed Time :'+str(perturbed_time)+'-'+'  Repeat Time :'+str(repeat_time)+'  perspective')
 				else:
-					print(str(perturbed_time)+'-'+str(repeat_time))
+					print('Perturbed Time :'+str(perturbed_time)+'-'+'  Repeat Time :'+str(repeat_time))
 
 				if self.is_perform(0.5, 0.5):
 					synthesis_perturbed_img_filter = self.synthesis_perturbed_img.copy()
