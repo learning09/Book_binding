@@ -1,3 +1,5 @@
+# Generating synthesized curved images for book pages
+
 # Import libraries
 import argparse
 import os
