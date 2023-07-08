@@ -867,7 +867,7 @@ def xgw(args):
 
 			for m_n in range(10):
 				try:
-					saveFold = perturbed(img_path_, bg_path_, save_path, save_suffix)
+					#saveFold = perturbed(img_path_, bg_path_, save_path, save_suffix)
 					saveCurve = perturbed(img_path_, bg_path_, save_path, save_suffix)
 
 					repeat_time = min(max(round(np.random.normal(12, 4)), 1), 22)
