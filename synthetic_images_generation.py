@@ -813,17 +813,17 @@ class perturbed(object):
 		# draw_distance_hotmap(omega_curve)
 
 def multiThread(m, n, img_path_, bg_path_, save_path, save_suffix):
-	saveFold = perturbed(img_path_, bg_path_, save_path, save_suffix)
+	#saveFold = perturbed(img_path_, bg_path_, save_path, save_suffix)
 	saveCurve = perturbed(img_path_, bg_path_, save_path, save_suffix)
 
 	repeat_time = min(max(round(np.random.normal(10, 3)), 5), 16)
 	#fold = threading.Thread(target=saveFold.save_img, args=(m, n, 'fold', repeat_time, 'relativeShift_v2'), name='fold')
 	curve = threading.Thread(target=saveCurve.save_img, args=(m, n, 'curve', repeat_time, 'relativeShift_v2'), name='curve')
 
-	fold.start()
+	#fold.start()
 	curve.start()
 	curve.join()
-	fold.join()
+	#fold.join()
 
 def xgw(args):
 	path = args.path
