@@ -870,8 +870,8 @@ def xgw(args):
 					#saveFold = perturbed(img_path_, bg_path_, save_path, save_suffix)
 					saveCurve = perturbed(img_path_, bg_path_, save_path, save_suffix)
 
-					repeat_time = min(max(round(np.random.normal(12, 4)), 1), 22)
-					process_pool.apply_async(func=saveFold.save_img, args=(m, n, 'fold', repeat_time, 'relativeShift_v2'))
+					#repeat_time = min(max(round(np.random.normal(12, 4)), 1), 22)
+					#process_pool.apply_async(func=saveFold.save_img, args=(m, n, 'fold', repeat_time, 'relativeShift_v2'))
 
 					repeat_time = min(max(round(np.random.normal(10, 4)), 1), 22)
 					process_pool.apply_async(func=saveCurve.save_img, args=(m, n, 'curve', repeat_time, 'relativeShift_v2'))
